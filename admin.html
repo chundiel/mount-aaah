@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mount AAAH — Management</title>
+  <meta name="description" content="Mount AAAH management & admin list." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260209-2" />
+
+  <!-- ✅ Global Config + Main (optional, tetap aman) -->
+  <script defer src="./assets/js/site-config.js?v=20260209-2"></script>
+  <script defer src="./assets/js/main.js?v=20260209-2"></script>
+
+  <!-- ✅ IMPORTANT: ADMIN DATA MUST LOAD BEFORE admin.js -->
+  <script defer src="./assets/js/admin.data.js?v=20260209-2"></script>
+  <script defer src="./assets/js/admin.js?v=20260209-2"></script>
+</head>
+
+<body>
+  <!-- background -->
+  <div class="bg">
+    <div class="bg__stars"></div>
+    <div class="bg__fog"></div>
+    <div class="bg__mountain"></div>
+  </div>
+
+  <!-- nav -->
+  <header class="nav glass">
+    <div class="nav__inner container">
+      <div class="brand">
+        <div class="brand__text">
+          <div class="brand__name">Mount AAAH</div>
+          <div class="brand__tag">Management</div>
+        </div>
+      </div>
+
+      <nav class="nav__links">
+        <a href="index.html#map">Home</a>
+        <a href="#team">Team</a>
+        <a href="index.html#services">Services</a>
+      </nav>
+
+      <div class="nav__right">
+        <button class="nav__toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
+        <a class="btn btn--ghost" href="index.html">← Back</a>
+      </div>
+
+      <!-- mobile drawer (filled by main.js) -->
+      <div class="nav__drawer" data-nav-drawer></div>
+    </div>
+  </header>
+
+  <div class="nav__overlay" data-nav-overlay></div>
+
+  <main class="section container" id="team">
+    <div class="section__title">
+      <h2>Management & Admin</h2>
+      <p>Official staff list for Mount AAAH (Display Name & Role).</p>
+    </div>
+
+    <!-- Search + Quick Actions -->
+    <div class="adminTop">
+      <div class="search glass">
+        <span class="search__icon">⌕</span>
+        <input id="adminSearch" type="text" placeholder="Search by name or role..." autocomplete="off" />
+      </div>
+
+      <div class="adminQuick glass">
+        <a data-link="discord" data-external>Discord</a>
+        <a data-link="roblox" data-external>Play Now</a>
+        <a data-link="donate" data-external>Donate</a>
+        <a href="index.html#assets">Assets</a>
+      </div>
+    </div>
+
+    <!-- ✅ Render target -->
+    <div class="adminGrid" id="adminGrid"></div>
+
+    <!-- empty state -->
+    <div id="adminEmpty" class="assetEmpty glass">
+      <div class="assetEmpty__icon">🧊</div>
+      <div class="assetEmpty__title">No staff found</div>
+      <div class="assetEmpty__desc">Try another keyword.</div>
+    </div>
+
+    <div class="assetsNote" style="margin-top:16px;">
+      <div class="assetsNote__box glass">
+        <strong>Need to contact the team?</strong>
+        <span>Use Discord for support.</span>
+        <a class="btn btn--small btn--primary" href="index.html#services">Developer Services</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__inner glass">
+      <div>© <span id="year"></span> Mount AAAH. All rights reserved.</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year safe fallback (kalau main.js gak load pun aman)
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

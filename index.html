@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mount AAAH — Official Site</title>
+  <meta name="description" content="Mount AAAH — A Roblox mountain climbing experience. Explore the map, browse assets, and hire our developer services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- BACKGROUND -->
+  <div class="bg">
+    <div class="bg__stars"></div>
+    <div class="bg__fog"></div>
+    <div class="bg__mountain"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav glass">
+    <div class="nav__inner container">
+      <div class="brand">
+        <!-- ✅ REMOVED: brand__logo -->
+        <div class="brand__text">
+          <div class="brand__name">Mount AAAH</div>
+          <div class="brand__tag">Official Website</div>
+        </div>
+      </div>
+
+      <nav class="nav__links">
+        <a href="#map">Home</a>
+        <a href="#assets">Assets</a>
+        <a href="#services">Dev Services</a>
+        <a href="#updates">Updates</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+
+      <div class="nav__right">
+        <!-- ✅ Mobile Hamburger -->
+        <button class="nav__toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
+
+        <!-- SINGLE CTA -->
+        <a class="btn btn--primary" data-link="roblox" data-external>Play Now</a>
+      </div>
+
+      <!-- ✅ Drawer container (filled by JS from nav__links) -->
+      <div class="nav__drawer" data-nav-drawer></div>
+    </div>
+  </header>
+
+  <!-- ✅ Overlay for outside click -->
+  <div class="nav__overlay" data-nav-overlay></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="play">
+      <div class="hero__left glass heroGlow">
+        <div class="pill">
+          <span class="pill__dot"></span>
+          Roblox Mountain Experience
+        </div>
+
+        <h1 class="hero__title">MOUNT AAAH</h1>
+        <p class="lead">Climb the Frozen Peaks. One Mistake, You Fall.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" data-link="roblox" data-external>Play on Roblox</a>
+          <a class="btn btn--ghost" href="#gallery">Watch Trailer</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat glass">
+            <div class="stat__num" id="visitorsCount">197.4K+</div>
+            <div class="stat__label">VISITORS</div>
+          </div>
+
+          <div class="stat glass">
+            <div class="stat__num">16.000</div>
+            <div class="stat__label">TOP SUMMIT</div>
+          </div>
+
+          <div class="stat glass">
+            <div class="stat__num">3:00:576</div>
+            <div class="stat__label">BEST TIME</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right glass heroFrame">
+        <div class="media">
+          <div class="media__frame">
+            <img src="assets/img/hero.jpg" alt="Mount AAAH map preview" />
+          </div>
+          <div class="media__bar">
+            <span class="chip">Official Preview</span>
+            <span class="chip chip--accent"><span class="dot"></span> Glass Dark</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section container" id="map">
+      <div class="section__title">
+        <h2>Map Highlights</h2>
+        <p>Core features built for a clean, competitive climb.</p>
+      </div>
+
+      <div class="grid4">
+        <div class="card glass">
+          <div class="card__icon">❄</div>
+          <div class="card__title">Dynamic Weather</div>
+          <div class="card__desc">Fog, snow, and mood changes that elevate the summit.</div>
+        </div>
+
+        <div class="card glass">
+          <div class="card__icon">🧭</div>
+          <div class="card__title">Hidden Trails</div>
+          <div class="card__desc">Secret routes and shortcuts for explorers.</div>
+        </div>
+
+        <div class="card glass">
+          <div class="card__icon">🏁</div>
+          <div class="card__title">Checkpoints & Rewards</div>
+          <div class="card__desc">Progress saving, badges, and reward loops.</div>
+        </div>
+
+        <div class="card glass">
+          <div class="card__icon">🌙</div>
+          <div class="card__title">Night Summit Mode</div>
+          <div class="card__desc">Dark ambience with neon guidance and glow UI.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSETS -->
+    <section class="section container" id="assets">
+      <div class="section__title">
+        <h2>Assets for Sale</h2>
+        <p>Production-ready systems from the Mount AAAH ecosystem.</p>
+      </div>
+
+      <div class="assetsTop">
+        <div class="tabs glass" role="tablist" aria-label="Asset categories">
+          <button class="tab is-active" data-filter="donate" type="button" role="tab" aria-selected="true">Donate Board</button>
+          <button class="tab" data-filter="aura" type="button" role="tab" aria-selected="false">Aura Shop</button>
+          <button class="tab" data-filter="trail" type="button" role="tab" aria-selected="false">Trail Shop</button>
+          <button class="tab" data-filter="all" type="button" role="tab" aria-selected="false">All</button>
+        </div>
+
+        <div class="search glass">
+          <span class="search__icon">⌕</span>
+          <input id="assetSearch" type="text" placeholder="Search assets..." autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="grid3" id="assetGrid">
+        <!-- DONATE -->
+        <article class="product glass" data-cat="donate" data-name="Donation Board Pro">
+          <div class="product__media">
+            <img src="assets/img/asset-donate.jpg" alt="Donation Board Pro thumbnail" />
+            <div class="product__badges">
+              <span class="badgePill">Donate</span>
+              <span class="badgePill badgePill--accent">Best Seller</span>
+            </div>
+          </div>
+
+          <div class="product__meta">
+            <h3>Donation Board Pro</h3>
+            <p>Top donors, animations, clean UI, scalable data.</p>
+
+            <div class="product__row">
+              <span class="pricePill">350 R$</span>
+              <div class="product__actions">
+                <a class="btn btn--small btn--primary" data-link="donate" data-external>Buy</a>
+                <a class="btn btn--small btn--ghost" href="#services">Hire Dev</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- AURA -->
+        <article class="product glass" data-cat="aura" data-name="Glowing Aura Pack">
+          <div class="product__media">
+            <img src="assets/img/asset-aura.jpg" alt="Glowing Aura Pack thumbnail" />
+            <div class="product__badges">
+              <span class="badgePill">Aura</span>
+              <span class="badgePill badgePill--cold">FX</span>
+            </div>
+          </div>
+
+          <div class="product__meta">
+            <h3>Glowing Aura Pack</h3>
+            <p>Aura equip, save/load, shop UI, admin tools.</p>
+
+            <div class="product__row">
+              <span class="pricePill">199 R$</span>
+              <div class="product__actions">
+                <a class="btn btn--small btn--primary" data-link="donate" data-external>Buy</a>
+                <a class="btn btn--small btn--ghost" href="#updates">Preview</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TRAIL -->
+        <article class="product glass" data-cat="trail" data-name="Trail Shop System">
+          <div class="product__media">
+            <img src="assets/img/asset-trail.jpg" alt="Trail Shop System thumbnail" />
+            <div class="product__badges">
+              <span class="badgePill">Trail</span>
+              <span class="badgePill badgePill--warn">Custom</span>
+            </div>
+          </div>
+
+          <div class="product__meta">
+            <h3>Trail Shop System</h3>
+            <p>Mobile-friendly catalog, equip confirm, datastore.</p>
+
+            <div class="product__row">
+              <span class="pricePill pricePill--muted">Contact</span>
+              <div class="product__actions">
+                <a class="btn btn--small btn--ghost" data-link="discord" data-external>Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="assetEmpty" class="assetEmpty glass">
+        <div class="assetEmpty__icon">⛰️</div>
+        <div class="assetEmpty__title">No assets found</div>
+        <div class="assetEmpty__desc">Try another keyword or browse all categories.</div>
+      </div>
+
+      <div class="assetsNote">
+        <div class="assetsNote__box glass">
+          <strong>Want a custom version?</strong>
+          <span>We can tailor UI, datastore, and features for your experience.</span>
+          <a class="btn btn--small btn--primary" href="#services">Developer Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEV SERVICES -->
+    <section class="section container" id="services">
+      <div class="section__title">
+        <h2>Developer Services</h2>
+        <p>Need custom scripts, UI, or systems for your Roblox experience?</p>
+      </div>
+
+      <div class="service glass">
+        <div class="service__left">
+          <h3>Custom Roblox Scripting & Features</h3>
+          <ul class="list">
+            <li>Systems: donations, shops, leaderboards, events, admin tools</li>
+            <li>UI/UX: glass dark panels, mobile-first layout</li>
+            <li>Optimization: performance, datastore safety, networking</li>
+            <li>Delivery: clean modules, scalable folder structure</li>
+          </ul>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" data-link="discord" data-external>Contact Developer</a>
+            <a class="btn btn--ghost" href="#assets">View Assets</a>
+          </div>
+        </div>
+
+        <div class="service__right">
+          <div class="badge glass">
+            <div class="badge__big">⚡</div>
+            <div>
+              <div class="badge__title">Fast & Clean Delivery</div>
+              <div class="badge__desc">Built with production practices.</div>
+            </div>
+          </div>
+
+          <div class="badge glass">
+            <div class="badge__big">🧊</div>
+            <div>
+              <div class="badge__title">Mount AAAH Glass Dark</div>
+              <div class="badge__desc">Consistent style & polish.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATES -->
+    <section class="section container" id="updates">
+      <div class="section__title">
+        <h2>Latest Updates</h2>
+        <p>Track what’s new inside Mount AAAH.</p>
+      </div>
+
+      <div class="updates glass">
+        <div class="updates__list">
+          <div class="update"><span class="ver">v0.3</span> Trail Shop</div>
+          <div class="update"><span class="ver">v0.2</span> Top Up Cash Point With Robux</div>
+          <div class="update"><span class="ver">v0.1</span> Event +20</div>
+        </div>
+
+        <div class="updates__media" id="gallery">
+          <a class="video glass" data-link="trailer" data-external style="background-image:url('assets/img/video-thumb.jpg')">
+            <div class="video__overlay">
+              <div class="video__play">▶</div>
+              <div class="video__label">Watch the Trailer</div>
+            </div>
+          </a>
+
+          <div class="thumbs">
+            <img src="assets/img/gallery-1.jpg" alt="Gallery 1" />
+            <img src="assets/img/gallery-2.jpg" alt="Gallery 2" />
+            <img src="assets/img/gallery-3.jpg" alt="Gallery 3" />
+            <img src="assets/img/gallery-4.jpg" alt="Gallery 4" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta container">
+      <div class="cta__box glass">
+        <h2>Ready to summit?</h2>
+        <p>Join the climb, support the project, or hire us for your next system.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" data-link="roblox" data-external>Play on Roblox</a>
+          <a class="btn btn--ghost" data-link="discord" data-external>Join Discord</a>
+          <a class="btn btn--ghost" data-link="donate" data-external>Donate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer container">
+    <div class="footer__inner glass">
+      <div>© <span id="year"></span> Mount AAAH. All rights reserved.</div>
+      <div class="footer__links">
+        <a data-link="discord" data-external>Discord</a>
+        <a data-link="roblox" data-external>Roblox</a>
+        <a data-link="donate" data-external>Donate</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ Shared config first -->
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
